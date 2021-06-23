@@ -9,6 +9,11 @@ class AuthController extends Controller
 {
     public function index()
     {
+        if (Auth::check()) {
+            if (Auth::user()->usertype == 'admin')
+                return view('admin.dashboard');
+            else return view('influent.dashboard');
+        }
         return view('auth.login');
     }
 }
