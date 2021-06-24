@@ -38,6 +38,7 @@ class ProfilController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' .$extension;
             $file->move('uploads/profile/', $filename);
+            $file->move('storage/users-avatar/', $filename);
             $user->avatar = $filename;
         }
 
