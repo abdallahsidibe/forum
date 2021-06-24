@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use App\Models\Referent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -12,8 +13,11 @@ class DashboardController extends Controller
     /**Fonction index */
     public function dashboard()
     {
-        $users = User::all();
-        return view('admin.dashboard')->with('users', $users);       
+        $user  =  DB::table('users')->count();
+        $pub   =  DB::table('pubs')->count();
+        $topic =  DB::table('topics')->count();
+
+        return view('admin.dashboard', compact('user','pub','topic'));       
     }
    
 

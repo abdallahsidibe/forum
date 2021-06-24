@@ -12,19 +12,8 @@
 |
 */
 
-Route::get('/test', function () {
-  return view('test');
-});
-Route::get('/my', function () {
-  return view('frontend.my-profile');
-});
-Route::get('/mon', function () {
-  return view('profil.index');
-});
-/****************************************** */
-/*Route::group(['middleware' => ['auth', 'isUser']], function(){
-  Route::get('/home', 'HomeController@index')->name('home');
-});*/
+/***************************************************************************/
+
 
 Route::group(['middleware' => ['auth', 'admin']], function(){
     /**Dashboard */
@@ -43,11 +32,7 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
 });
 
 
-
-
  Route::group(['middleware' => ['auth', 'influent']], function(){
-
-   // Route::get('/influent-dashboard/{user}', 'Influent\ProfilesController@show')->name('profile.show');
 
     Route::get('/influent-profile', function () {
       return view('influent.influent-profile');
@@ -57,6 +42,9 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::post('/my-info-update','Influent\InfoController@infoupdate');
 });
 
+
+Route::group(['middleware' => ['auth']], function(){
+
 Route::get('/profiles', 'Influent\ProfilesController@index');
 Route::get('/influent-profile/{user}', 'Influent\ProfilesController@show')->name('profile.show');
 
@@ -64,13 +52,15 @@ Route::get('/influent-profile/{user}', 'Influent\ProfilesController@show')->name
 Route::get('/my-profil', 'ProfilController@index')->name('my-profil');
 Route::post('/my-profil-update','ProfilController@profilupdate');
 
-/**Pubs ****/
-Route::get('/influent', 'PubController@index')->name('pubs.index');
-Route::resource('pubs', 'PubController')->except(['index']);
-
  /**User Topics****/
 Route::get('/topics', 'TopicController@index')->name('topics.index');
 Route::get('/mytopic', 'MyTopicController@index')->name('topics.ind');
+ 
+});
+
+
+/**Pubs ****/
+Route::resource('pubs', 'PubController')->except(['index']);
 
  /**Topics */
 Route::resource('topics', 'TopicController')->except(['index']);

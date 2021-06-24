@@ -11,7 +11,7 @@
             @yield('content')
         </main>
 
-        @include('conversation.index')
+        @include('partials.tchat')
         @include('partials.footer')
 
     </div>
