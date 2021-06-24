@@ -77,10 +77,10 @@ class User extends Authenticatable
            return $this->hasOne('App\Models\Referent');
        }
 
-    public function publications()
-    {
-        return $this->hasMany('App\Publication');
-    }
+       public function pubs()
+       {
+           return $this->hasMany('App\Models\Pub');
+       }
 
     public function conversations()
     {

@@ -1,7 +1,7 @@
 <nav>
     <ul>
         <li>
-            <a href="/influent" title="">
+            <a href="/accueil" title="">
                 <span><img src="{{ asset('assetss/images/icon1.png') }}" alt=""></span>
                 Home
             </a>
