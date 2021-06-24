@@ -96,7 +96,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Utilisateurs
+                    <h4 class="card-title">
                         <button type="button" class="float-right btn btn-primary" data-toggle="modal"
                             data-target="#exampleModal">Ajouter</button>
                     </h4>
