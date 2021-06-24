@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
 
 Route::group(['middleware' => ['auth']], function(){
 
+Route::get('/accueil', 'PubController@index')->name('pubs.index');
 Route::get('/profiles', 'Influent\ProfilesController@index');
 Route::get('/influent-profile/{user}', 'Influent\ProfilesController@show')->name('profile.show');
 

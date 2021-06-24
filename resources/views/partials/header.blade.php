@@ -29,9 +29,9 @@
                         <li><a href="{{ route('my-profil') }}" title="">Profil</a></li>
                         <li><a href="{{ route('topics.create') }}" title="">Créer un sujet</a></li>
                         <li><a href="{{ route('topics.ind') }}" title="">Mes sujets</a></li>
-                        @if (Auth::user()->usertype == 'influent')
-                        <li><a href="{{ route('my-info') }}" title="">Mes infos</a></li>
-                        @endif
+                       {{--  @if (Auth::user()->usertype == 'influent')
+                       <li><a href="{{ route('my-info') }}" title="">Mes infos</a></li>
+                        @endif--}}
                     </ul>
                     <h3 class="tc"><a href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
