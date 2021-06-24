@@ -130,7 +130,7 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="card card-chart">
                                         <div class="card-header">
-                                            <h4 class="card-title">Sujets</h4>
+                                            <h4 class="card-title">Publications</h4>
                                         </div>
                                         <hr>                                        
                                         <div class="card-body" style="background-color: pink">
